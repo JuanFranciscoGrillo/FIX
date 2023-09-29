@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     post_date: DataTypes.DATE,
     status: DataTypes.STRING,
     start_date: DataTypes.DATE,
-    deadline: DataTypes.DATE
+    deadline: DataTypes.DATE,
   }, {
     sequelize,
     modelName: 'JobListing',

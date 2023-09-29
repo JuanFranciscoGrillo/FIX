@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   SubContractor.init({
     userId: DataTypes.INTEGER,
     skills: DataTypes.STRING,
-    certifications: DataTypes.STRING
+    certifications: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'SubContractor',

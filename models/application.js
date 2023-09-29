@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     jobId: DataTypes.INTEGER,
     subcontractorId: DataTypes.INTEGER,
     application_date: DataTypes.DATE,
-    status: DataTypes.STRING
+    status: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Application',

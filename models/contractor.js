@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   Contractor.init({
     userId: DataTypes.INTEGER,
     company_name: DataTypes.STRING,
-    address: DataTypes.STRING
+    address: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Contractor',

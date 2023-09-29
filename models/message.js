@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     senderId: DataTypes.INTEGER,
     receiverId: DataTypes.INTEGER,
     message_content: DataTypes.TEXT,
-    timestamp: DataTypes.DATE
+    timestamp: DataTypes.DATE,
   }, {
     sequelize,
     modelName: 'Message',
