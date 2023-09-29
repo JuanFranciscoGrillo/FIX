@@ -1,15 +1,22 @@
 const express = require('express');
-const routes = require('./controllers');
-const sequelize = require('./db/models').sequelize;
+const sequelize = require('./models').sequelize;
+const apiRoutes = require('./controllers/api');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+// Middleware
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use('/api', routes);
+// Static directory
+app.use(express.static('public'));
 
+// API Routes
+app.use('/api', apiRoutes);
+
+// Syncing sequelize models and then starting our Express app
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+  app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
 });
